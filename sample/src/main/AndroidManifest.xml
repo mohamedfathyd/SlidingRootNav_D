@@ -8,7 +8,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.List_activity"></activity>
+        <activity android:name=".Activity.Profile_page"></activity>
+        <activity android:name=".Activity.show" />
+        <activity android:name=".Activity.List_activity" />
         <activity
             android:name=".Activity.Regestration_activity"
             android:screenOrientation="portrait" />
@@ -23,7 +25,7 @@
         </activity>
         <activity
             android:name=".SampleActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
