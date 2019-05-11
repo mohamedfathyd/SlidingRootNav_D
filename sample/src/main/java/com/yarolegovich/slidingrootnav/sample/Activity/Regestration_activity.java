@@ -10,6 +10,8 @@ import android.support.v7.widget.AppCompatTextView;
 
 import com.yarolegovich.slidingrootnav.sample.R;
 
+import me.anwarshahriar.calligrapher.Calligrapher;
+
 public class Regestration_activity extends AppCompatActivity {
     TextInputLayout textInputLayoutname,textInputLayoutaddress,textInputLayoutphone,textInputLayoutcountry,textInputLayoutage,
             textInputLayoutpassword,textInputLayoutconfirmpassword,textInputLayoutr;
@@ -31,6 +33,8 @@ public class Regestration_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regestration_activity);
+        Calligrapher calligrapher = new Calligrapher(this);
+        calligrapher.setFont(this, "Droid.ttf", true);
     }}
 
 //   inisialize();}}

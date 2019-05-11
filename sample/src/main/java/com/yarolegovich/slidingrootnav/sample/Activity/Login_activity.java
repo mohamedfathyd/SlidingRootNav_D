@@ -13,6 +13,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.yarolegovich.slidingrootnav.sample.R;
+import com.yarolegovich.slidingrootnav.sample.SampleActivity;
+
+import me.anwarshahriar.calligrapher.Calligrapher;
 
 public class Login_activity extends AppCompatActivity {
 
@@ -33,6 +36,9 @@ public class Login_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_activity);
+        Calligrapher calligrapher = new Calligrapher(this);
+        calligrapher.setFont(this, "Droid.ttf", true);
+
         newaccount=findViewById(R.id.link_signup);
         login=findViewById(R.id.btn_login);
         newaccount.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +47,12 @@ public class Login_activity extends AppCompatActivity {
                 startActivity(new Intent(Login_activity.this,Regestration_activity.class));
             }
 
+        });
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Login_activity.this, SampleActivity.class));
+            }
         });
 
     }}

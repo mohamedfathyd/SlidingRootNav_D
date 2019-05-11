@@ -12,9 +12,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.widget.Toast;
 
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
+import com.yarolegovich.slidingrootnav.sample.fragment.ProfileFragment;
+import com.yarolegovich.slidingrootnav.sample.fragment.ScannFragmet;
+import com.yarolegovich.slidingrootnav.sample.fragment.ShareFragment;
 import com.yarolegovich.slidingrootnav.sample.menu.DrawerAdapter;
 import com.yarolegovich.slidingrootnav.sample.menu.DrawerItem;
 import com.yarolegovich.slidingrootnav.sample.menu.SimpleItem;
@@ -22,6 +26,8 @@ import com.yarolegovich.slidingrootnav.sample.menu.SpaceItem;
 import com.yarolegovich.slidingrootnav.sample.fragment.CenteredTextFragment;
 
 import java.util.Arrays;
+
+import me.anwarshahriar.calligrapher.Calligrapher;
 
 /**
  * Created by yarolegovich on 25.03.2017.
@@ -44,7 +50,8 @@ public class SampleActivity extends AppCompatActivity implements DrawerAdapter.O
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Calligrapher calligrapher = new Calligrapher(this);
+        calligrapher.setFont(this, "Droid.ttf", true);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -81,9 +88,23 @@ public class SampleActivity extends AppCompatActivity implements DrawerAdapter.O
         if (position == POS_LOGOUT) {
             finish();
         }
+        if (position == POS_DASHBOARD){
         slidingRootNav.closeMenu();
         Fragment selectedScreen = CenteredTextFragment.createFor(screenTitles[position]);
-        showFragment(selectedScreen);
+        showFragment(selectedScreen);}
+        if (position == POS_ACCOUNT){
+
+            slidingRootNav.closeMenu();
+            Fragment selectedScreen = new ProfileFragment();
+            showFragment(selectedScreen);}
+        if (position == POS_CART){
+            slidingRootNav.closeMenu();
+            Fragment selectedScreen = new ScannFragmet();
+            showFragment(selectedScreen);}
+        if (position == POS_MESSAGES){
+            slidingRootNav.closeMenu();
+            Fragment selectedScreen = new ShareFragment();
+            showFragment(selectedScreen);}
     }
 
     private void showFragment(Fragment fragment) {

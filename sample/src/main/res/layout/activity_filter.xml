@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/show"
+    tools:context=".Activity.FilterActivity">
+<ImageView
+    android:layout_width="200dp"
+    android:layout_height="240dp"
+    android:layout_centerHorizontal="true"
+    android:layout_margin="30dp"
+    android:background="@drawable/fill"
+    />
+    <RelativeLayout
+        android:id="@+id/d"
+        android:layout_width="wrap_content"
+        android:padding="30dp"
+        android:layout_margin="20dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rounded_edittext"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext_t"
+            android:layout_centerHorizontal="true"
+            android:padding="5dp"
+            android:id="@+id/spins">
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/spin"
+
+            android:entries="@array/account_num"
+
+            ></Spinner>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext_t"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/spins"
+            android:layout_marginTop="30dp"
+            android:padding="5dp"
+            android:id="@+id/spinss">
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/spinsss"
+
+                ></Spinner>
+        </LinearLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/a"
+
+            android:layout_below="@+id/spinss"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/input_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:hint="User Id" />
+        </android.support.design.widget.TextInputLayout>
+
+        <!--  Password Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="8dp"
+            android:layout_below="@+id/a"
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="Number Of Points"/>
+        </android.support.design.widget.TextInputLayout>
+    </RelativeLayout>
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_login"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/d"
+        android:background="@color/startblue"
+        android:text="Filter"/>
+</RelativeLayout>

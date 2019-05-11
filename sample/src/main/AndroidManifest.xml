@@ -8,15 +8,18 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.Profile_page"></activity>
+        <activity android:name=".Activity.FilterActivity"></activity>
+        <activity android:name=".Activity.Profile_page" />
         <activity android:name=".Activity.show" />
         <activity android:name=".Activity.List_activity" />
         <activity
             android:name=".Activity.Regestration_activity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".Activity.Login_activity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

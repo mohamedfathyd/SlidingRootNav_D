@@ -18,12 +18,12 @@ import me.anwarshahriar.calligrapher.Calligrapher;
  * Created by yarolegovich on 25.03.2017.
  */
 
-public class CenteredTextFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
     private static final String EXTRA_TEXT = "text";
 
-    public static CenteredTextFragment createFor(String text) {
-        CenteredTextFragment fragment = new CenteredTextFragment();
+    public static ProfileFragment createFor(String text) {
+        ProfileFragment fragment = new ProfileFragment();
         Bundle args = new Bundle();
         args.putString(EXTRA_TEXT, text);
         fragment.setArguments(args);
@@ -33,7 +33,7 @@ public class CenteredTextFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_text, container, false);
+        View view=inflater.inflate(R.layout.activity_profile_page, container, false);
         Calligrapher calligrapher = new Calligrapher(getActivity());
         calligrapher.setFont(getActivity(), "Droid.ttf", true);
         return view;
@@ -41,13 +41,6 @@ public class CenteredTextFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        final String text = getArguments().getString(EXTRA_TEXT);
-        TextView textView = view.findViewById(R.id.text);
-        textView.setText(text);
-        textView.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                Toast.makeText(v.getContext(), text, Toast.LENGTH_SHORT).show();
-            }
-        });
+
     }
 }

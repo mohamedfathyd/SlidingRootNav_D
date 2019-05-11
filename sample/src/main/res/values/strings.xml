@@ -1,6 +1,29 @@
 <resources>
-    <string name="app_name">SlidingRootSample</string>
+    <string name="app_name">دللي جمالك</string>
     <string name="account_balance">Account Balance</string>
-    <string name="balance_currency">$</string>
-    <string name="balance_amount">524.99</string>
+    <string name="balance_currency">PT</string>
+    <string name="balance_amount">250</string>
+    <string-array name="account_num">
+        <item>
+           السعودية
+           </item>
+        <item>
+          مصر
+           </item>
+        <item>
+           الأمارات
+           </item>
+        <item>
+           قطر
+           </item>
+        <item>
+           عمان
+           </item>
+        <item>
+          الكويت
+           </item>
+        <item>
+           البحرين
+           </item>
+    </string-array>
 </resources>
