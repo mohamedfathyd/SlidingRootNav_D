@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "386730070265",
+    "firebase_url": "https://dalilegamalek.firebaseio.com",
+    "project_id": "dalilegamalek",
+    "storage_bucket": "dalilegamalek.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:386730070265:android:3dd3c6a1fdae71e6",
+        "android_client_info": {
+          "package_name": "com.yarolegovich.dalilegamalek.sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "386730070265-nv9s0el8pk3d26g6jfof3jgef4c5e1lg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yarolegovich.dalilegamalek.sample",
+            "certificate_hash": "22fd65c93727d47d3cf5938ca60e08c55096fe37"
+          }
+        },
+        {
+          "client_id": "386730070265-20gfp74kh4ujdjpe33vhl08oagrl5j6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAozmbp7ZJ-T5QR7p6n2Gf7nNW5daIpdAs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "386730070265-20gfp74kh4ujdjpe33vhl08oagrl5j6k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

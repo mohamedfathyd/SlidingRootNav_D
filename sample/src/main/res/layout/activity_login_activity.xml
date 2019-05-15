@@ -51,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
-                android:hint="أسم المستخدم" />
+                android:hint="رقم الهاتف" />
         </android.support.design.widget.TextInputLayout>
 
         <!--  Password Label -->

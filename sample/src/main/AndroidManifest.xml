@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.yarolegovich.slidingrootnav.sample">
+    package="com.yarolegovich.dalilegamalek.sample">
 
     <application
         android:allowBackup="true"
@@ -8,16 +8,16 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.FilterActivity"></activity>
-        <activity android:name=".Activity.Profile_page" />
-        <activity android:name=".Activity.show" />
-        <activity android:name=".Activity.List_activity" />
+        <activity android:name="com.yarolegovich.dalilegamalek.sample.Activity.FilterActivity"></activity>
+        <activity android:name="com.yarolegovich.dalilegamalek.sample.Activity.Profile_page" />
+        <activity android:name="com.yarolegovich.dalilegamalek.sample.Activity.show" />
+        <activity android:name="com.yarolegovich.dalilegamalek.sample.Activity.List_activity" />
         <activity
-            android:name=".Activity.Regestration_activity"
+            android:name="com.yarolegovich.dalilegamalek.sample.Activity.Regestration_activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name=".Activity.Login_activity"
+            android:name="com.yarolegovich.dalilegamalek.sample.Activity.Login_activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SampleActivity"
+            android:name="com.yarolegovich.dalilegamalek.sample.SampleActivity"
             android:screenOrientation="portrait" />
     </application>
 

@@ -4,7 +4,7 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
-        applicationId "com.yarolegovich.slidingrootnav.sample"
+        applicationId "com.yarolegovich.dalilegamalek.sample"
         minSdkVersion 19
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -25,6 +25,8 @@ dependencies {
     compile "com.android.support:recyclerview-v7:$supportLibVersion"
     compile 'me.anwarshahriar:calligrapher:1.0'
     compile 'com.google.zxing:core:3.2.1'
+    compile 'com.google.firebase:firebase-core:11.2.0'
+    compile 'com.google.firebase:firebase-auth:11.2.0'
     compile 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
 
     compile project(':library')
@@ -36,3 +38,4 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'de.hdodenhof:circleimageview:3.0.0'
 }
+apply plugin: 'com.google.gms.google-services'
