@@ -16,18 +16,15 @@ public interface apiinterface_home {
                                    @Field("date") String date, @Field("email") String email, @Field("image") String image
                                    );
  @FormUrlEncoded
- @POST("fnon/Fnon_login.php")
+ @POST("Gmalek_login.php")
  Call<List<contact_home>>getcontacts_login( @Field("phonee") String phonee,@Field("password")String password);
-    @FormUrlEncoded
-    @POST("montag/Galia/Galia_update_category.php")
-    Call<ResponseBody> getcontacts_update(@Field("name") String name, @Field("details") String details, @Field("image") String image,
-                                          @Field("address") String address, @Field("categroy") String category, @Field("copon") String copon,
-                                          @Field("phone") String phone, @Field("link") String link, @Field("id") int id);
 
-    @GET("montag/Galia/Galia_allcontent.php")
-    Call<List<contact_home>> getcontacts_allfirst();
+    @GET("Gmalek_first_category.php")
+    Call<List<content_category>> getcontacts_allfirst();
+ @GET("Gmalek_annonce.php")
+ Call<List<content_category>> getcontacts_annonce();
     @FormUrlEncoded
-    @POST("montag/Galia/Galia_delete_category.php")
-    Call<ResponseBody> delete_category(@Field("id") int id);
+    @POST("Gmalek_first_category.php")
+    Call<ResponseBody> getcontacts_second(@Field("id") int id);
 }
 
