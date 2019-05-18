@@ -26,5 +26,13 @@ public interface apiinterface_home {
     @FormUrlEncoded
     @POST("Gmalek_second_category.php")
     Call<List<contact_order>> getcontacts_second(@Field("id") int id);
+    @FormUrlEncoded
+    @POST("Gmalek_fillter.php")
+    Call<List<contact_order>> getcontacts_filtter(@Field("id") int id,@Field("city")String city,@Field("from")int from,@Field("to")int to);
+
+    @FormUrlEncoded
+    @POST("Gmalek_sendpoint.php")
+    Call<ResponseBody> getcontacts_send(@Field("id_send") int id_send,@Field("id_receive") int id_receive , @Field("points")int points);
+
 }
 

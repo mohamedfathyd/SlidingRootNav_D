@@ -16,11 +16,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:background="@drawable/rounded_edittext_blue"
             android:gravity="center"
-            android:textColor="@color/startblue"
-            android:text="Scan This Code"
+            android:id="@+id/ss"
+            android:padding="10dp"
+            android:text="أفحص هذا الرمز"
             android:textSize="25dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="35dp"
             />
         <ImageView
             android:layout_width="wrap_content"

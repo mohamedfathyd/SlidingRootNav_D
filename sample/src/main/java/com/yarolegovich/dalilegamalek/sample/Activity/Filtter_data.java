@@ -26,7 +26,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class List_activity extends AppCompatActivity {
+public class Filtter_data extends AppCompatActivity {
     TextView title;
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
@@ -34,13 +34,13 @@ public class List_activity extends AppCompatActivity {
     private List<contact_order> contactList;
     private apiinterface_home apiinterface;
     ProgressBar progressBar;
-     ImageView filter;
+    ImageView filter;
     TextView textView;
     private SharedPreferences sharedpref;
     Typeface myTypeface;
     Intent intent;
-    int secondry_id;
-    String name;
+    int secondry_id,from,to;
+    String city;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,9 +49,7 @@ public class List_activity extends AppCompatActivity {
         filter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(List_activity.this,FilterActivity.class);
-                intent.putExtra("id",secondry_id);
-                startActivity(intent);
+                startActivity(new Intent(Filtter_data.this,FilterActivity.class));
             }
         });
         Calligrapher calligrapher = new Calligrapher(this);
@@ -61,8 +59,10 @@ public class List_activity extends AppCompatActivity {
 
         intent=getIntent();
         secondry_id=intent.getIntExtra("id",0);
-        name=intent.getStringExtra("name");
-        this.setTitle("name");
+        from=intent.getIntExtra("from",0);
+        to=intent.getIntExtra("to",0);
+        city=intent.getStringExtra("city");
+        this.setTitle("دللي جمالك");
         recyclerView=(RecyclerView)findViewById(R.id.review);
         progressBar=(ProgressBar)findViewById(R.id.progressBar_subject);
         progressBar.setVisibility(View.VISIBLE);
@@ -87,7 +87,7 @@ public class List_activity extends AppCompatActivity {
     }
     public void fetchInfo(){
         apiinterface= Apiclient_home.getapiClient().create(apiinterface_home.class);
-        Call<List<contact_order>> call = apiinterface.getcontacts_second(secondry_id);
+        Call<List<contact_order>> call = apiinterface.getcontacts_filtter(secondry_id,city,from,to);
         call.enqueue(new Callback<List<contact_order>>() {
             @Override
             public void onResponse(Call<List<contact_order>> call, Response<List<contact_order>> response) {
@@ -97,7 +97,7 @@ public class List_activity extends AppCompatActivity {
 
                 } else {
 
-                    recyclerAdapter=new RecyclerAdapter(List_activity.this,contactList);
+                    recyclerAdapter=new RecyclerAdapter(Filtter_data.this,contactList);
                     recyclerView.setAdapter(recyclerAdapter);
                 }
 

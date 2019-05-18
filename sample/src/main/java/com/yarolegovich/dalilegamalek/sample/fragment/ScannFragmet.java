@@ -4,12 +4,14 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
@@ -29,6 +31,8 @@ public class ScannFragmet extends Fragment {
 
     private static final String EXTRA_TEXT = "text";
     ImageView imageView;
+    TextView textView;
+    Typeface myTypeface;
     private SharedPreferences sharedpref;
 
     int id;
@@ -37,7 +41,10 @@ public class ScannFragmet extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.scannfragment, container, false);
-
+        myTypeface = Typeface.createFromAsset(getActivity().getAssets(), "Droid.ttf");
+        textView=view.findViewById(R.id.ss);
+        textView.setText("أفحص هذا الرمز");
+        textView.setTypeface(myTypeface);
         Calligrapher calligrapher = new Calligrapher(getActivity());
         calligrapher.setFont(getActivity(), "Droid.ttf", true);
         imageView=view.findViewById(R.id.parcode);

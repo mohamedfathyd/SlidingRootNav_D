@@ -54,6 +54,7 @@ public class Regestration_activity extends AppCompatActivity {
     TextView openlogin;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
    Call<ResponseBody> call = null;
+    private apiinterface_home apiinterface;
     String code,mVerificationId;
     ProgressDialog progressDialog;
     ImageView profile;
@@ -61,7 +62,7 @@ public class Regestration_activity extends AppCompatActivity {
     //   login_ login_;
     String codee =null;
   private FirebaseAuth mAuth;
-      private apiinterface_home apiinterface;
+
     Bitmap bitmap;
     private  static final int IMAGE = 100;
     @Override
