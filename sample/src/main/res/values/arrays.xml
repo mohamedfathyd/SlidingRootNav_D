@@ -2,12 +2,12 @@
 <resources>
 
     <string-array name="ld_activityScreenTitles">
-        <item>Home Page</item>
-        <item>My Profile</item>
-        <item>Share Points </item>
-        <item>Scan Code</item>
+        <item>الرئيسية</item>
+        <item>الصفحة الشخصية</item>
+        <item>أرسال نقاط</item>
+        <item>الكود الشخصى</item>
         <item />
-        <item>Log Out</item>
+        <item>تسجيل الخروج</item>
     </string-array>
 
     <array name="ld_activityScreenIcons">

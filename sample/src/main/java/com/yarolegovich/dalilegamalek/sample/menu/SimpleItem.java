@@ -1,5 +1,7 @@
 package com.yarolegovich.dalilegamalek.sample.menu;
 
+import android.content.Context;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,13 +21,14 @@ public class SimpleItem extends DrawerItem<SimpleItem.ViewHolder> {
 
     private int normalItemIconTint;
     private int normalItemTextTint;
-
+Typeface myTypeface;
     private Drawable icon;
     private String title;
-
-    public SimpleItem(Drawable icon, String title) {
+     Context context;
+    public SimpleItem(Drawable icon, String title , Context context) {
         this.icon = icon;
         this.title = title;
+        this.context=context;
     }
 
     @Override
@@ -37,7 +40,9 @@ public class SimpleItem extends DrawerItem<SimpleItem.ViewHolder> {
 
     @Override
     public void bindViewHolder(ViewHolder holder) {
+        myTypeface = Typeface.createFromAsset(context.getAssets(), "Droid.ttf");
         holder.title.setText(title);
+        holder.title.setTypeface(myTypeface);
         holder.icon.setImageDrawable(icon);
 
         holder.title.setTextColor(isChecked ? selectedItemTextTint : normalItemTextTint);

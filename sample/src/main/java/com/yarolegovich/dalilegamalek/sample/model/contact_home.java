@@ -8,9 +8,11 @@ public class contact_home {
     @SerializedName("image")
     String image;
     @SerializedName("points")
-    String points;
+    int points;
     @SerializedName("name")
     String name;
+    @SerializedName("email")
+    String email;
     @SerializedName("date")
     String date;
     @SerializedName("phone")
@@ -19,6 +21,14 @@ public class contact_home {
     String address;
     @SerializedName("password")
     String password;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public int getId() {
         return id;
@@ -36,11 +46,11 @@ public class contact_home {
         this.image = image;
     }
 
-    public String getPoints() {
+    public int getPoints() {
         return points;
     }
 
-    public void setPoints(String points) {
+    public void setPoints(int points) {
         this.points = points;
     }
 

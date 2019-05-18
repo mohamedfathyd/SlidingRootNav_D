@@ -13,17 +13,19 @@
         android:layout_width="match_parent"
         android:layout_height="405dp">
         <LinearLayout
-            android:background="@drawable/gee"
+            android:background="@drawable/show"
             android:layout_width="match_parent"
             android:layout_height="350dp"
             android:orientation="vertical">
-            <ImageView
-                android:layout_marginTop="45dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_width="150dp"
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/img"
+                android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@drawable/b"/>
+                android:src="@drawable/login_back"
+                app:civ_border_width="2dp"
+                android:layout_gravity="center"
+                app:civ_border_color="#FF000000"/>
             <TextView
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center_horizontal"
@@ -31,9 +33,9 @@
                 android:layout_height="wrap_content"
                 android:text="Mani Sai Prasad"
                 android:id="@+id/name"
-                android:textColor="#fff"
+                android:textColor="@color/startblue"
                 android:textStyle="bold"
-                android:textSize="21sp"/>
+                android:textSize="23sp"/>
         </LinearLayout>
         <android.support.v7.widget.CardView
             android:layout_width="400dp"
@@ -54,8 +56,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Birth Date"
+                        android:text="تاريخ الميلاد"
                         android:textSize="20sp"
+                        android:id="@+id/aget"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -76,8 +79,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Points"
+                        android:text="النقاط"
                         android:textSize="20sp"
+                        android:id="@+id/pointt"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -99,7 +103,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Orders"
+                        android:text="رقم المستخدم"
+                        android:id="@+id/ordert"
                         android:textSize="20sp"
                         />
                     <TextView
@@ -132,10 +137,13 @@
 
             <TextView
                 android:textStyle="bold"
-                android:layout_gravity="center_vertical"
+
                 android:id="@+id/email"
                 android:layout_margin="20dp"
+
                 android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
                 android:background="@drawable/rounded_edittext"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
@@ -153,6 +161,7 @@
                 android:id="@+id/phone"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="20dp"
+                android:gravity="center"
                 android:layout_width="match_parent"
                 android:background="@drawable/rounded_edittext"
                 android:layout_height="wrap_content"
@@ -173,6 +182,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_margin="20dp"
                 android:layout_width="match_parent"
+                android:gravity="center"
                 android:background="@drawable/rounded_edittext"
                 android:layout_height="wrap_content"
                 android:padding="10dp"

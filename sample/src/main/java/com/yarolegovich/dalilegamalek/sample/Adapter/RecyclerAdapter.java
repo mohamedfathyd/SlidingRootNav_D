@@ -1,5 +1,6 @@
 package com.yarolegovich.dalilegamalek.sample.Adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -17,6 +18,8 @@ import com.yarolegovich.dalilegamalek.sample.R;
 import com.yarolegovich.dalilegamalek.sample.model.contact_order;
 
 import java.util.List;
+
+import me.anwarshahriar.calligrapher.Calligrapher;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
     Typeface myTypeface;
@@ -40,10 +43,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
 
-         myTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/flat.ttf");
-
-         holder.Name.setText(contactslist.get(position).getName());
-         holder.Name.setTypeface(myTypeface);
+     //    myTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/flat.ttf");
+        Calligrapher calligrapher = new Calligrapher(context);
+        calligrapher.setFont((Activity) context, "Droid.ttf", true);
+       holder.Name.setText(contactslist.get(position).getName());
+       holder.likes.setText(contactslist.get(position).getLikes()+" معجب بهذا ");
+     //    holder.Name.setTypeface(myTypeface);
          Glide.with(context).load(contactslist.get(position).getImage()).error(R.drawable.circlelogo).into(holder.image);
 
          holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -80,13 +85,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     }
 
 public static class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView Name;
+        TextView Name,likes;
         ImageView image;
 
     public MyViewHolder(View itemView) {
         super(itemView);
-        Name=(TextView)itemView.findViewById(R.id.name);
+        Name=(TextView)itemView.findViewById(R.id.txt_fish_title);
         image=(ImageView)itemView.findViewById(R.id.imageview3);
+        likes=itemView.findViewById(R.id.ratingBar);
 
     }
 }}

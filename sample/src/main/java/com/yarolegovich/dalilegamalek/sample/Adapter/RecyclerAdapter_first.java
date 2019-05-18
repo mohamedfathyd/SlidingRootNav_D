@@ -1,5 +1,6 @@
 package com.yarolegovich.dalilegamalek.sample.Adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -17,6 +18,8 @@ import com.yarolegovich.dalilegamalek.sample.R;
 import com.yarolegovich.dalilegamalek.sample.model.content_category;
 
 import java.util.List;
+
+import me.anwarshahriar.calligrapher.Calligrapher;
 
 
 public class RecyclerAdapter_first extends RecyclerView.Adapter<RecyclerAdapter_first.MyViewHolder> {
@@ -42,10 +45,11 @@ public class RecyclerAdapter_first extends RecyclerView.Adapter<RecyclerAdapter_
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
 
-         myTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/flat.ttf");
-
+//         myTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/flat.ttf");
+        Calligrapher calligrapher = new Calligrapher(context);
+        calligrapher.setFont((Activity) context, "Droid.ttf", true);
          holder.Name.setText(contactslist.get(position).getName());
-         holder.Name.setTypeface(myTypeface);
+      //   holder.Name.setTypeface(myTypeface);
          Glide.with(context).load(contactslist.get(position).getImage()).error(R.drawable.circlelogo).into(holder.image);
          holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +76,7 @@ public static class MyViewHolder extends RecyclerView.ViewHolder {
     public MyViewHolder(View itemView) {
         super(itemView);
         Name=(TextView)itemView.findViewById(R.id.name);
-        image=(ImageView)itemView.findViewById(R.id.photo);
+        image=(ImageView)itemView.findViewById(R.id.imageview3);
 
     }
 }}

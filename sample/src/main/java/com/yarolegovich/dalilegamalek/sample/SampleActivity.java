@@ -1,6 +1,8 @@
 package com.yarolegovich.dalilegamalek.sample;
 
 import android.app.Fragment;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -39,7 +41,8 @@ public class SampleActivity extends AppCompatActivity implements DrawerAdapter.O
     private static final int POS_MESSAGES = 2;
     private static final int POS_CART = 3;
     private static final int POS_LOGOUT = 5;
-
+    private SharedPreferences sharedpref;
+    private SharedPreferences.Editor edt;
     private String[] screenTitles;
     private Drawable[] screenIcons;
 
@@ -78,13 +81,24 @@ public class SampleActivity extends AppCompatActivity implements DrawerAdapter.O
         list.setNestedScrollingEnabled(false);
         list.setLayoutManager(new LinearLayoutManager(this));
         list.setAdapter(adapter);
-
+        sharedpref =getSharedPreferences("ManoAd", Context.MODE_PRIVATE);
+        edt = sharedpref.edit();
         adapter.setSelected(POS_DASHBOARD);
     }
 
     @Override
     public void onItemSelected(int position) {
         if (position == POS_LOGOUT) {
+            edt.putInt("id",0);
+            edt.putString("name","");
+            edt.putString("phone","");
+            edt.putString("address","");
+            edt.putString("password","");
+            edt.putString("points","");
+            edt.putString("image","");
+            edt.putString("age", "");
+            edt.putString("remember","no");
+            edt.apply();
             finish();
         }
         if (position == POS_DASHBOARD){
@@ -113,7 +127,7 @@ public class SampleActivity extends AppCompatActivity implements DrawerAdapter.O
     }
 
     private DrawerItem createItemFor(int position) {
-        return new SimpleItem(screenIcons[position], screenTitles[position])
+        return new SimpleItem(screenIcons[position], screenTitles[position],SampleActivity.this)
                 .withIconTint(color(R.color.textColorSecondary))
                 .withTextTint(color(R.color.textColorPrimary))
                 .withSelectedIconTint(color(R.color.colorAccent))

@@ -43,7 +43,7 @@ public class CenteredTextFragment extends Fragment {
     private apiinterface_home apiinterface;
     int x=0;
     private RecyclerView recyclerView,recyclerView2;
-    private RecyclerView.LayoutManager layoutManager;
+    private RecyclerView.LayoutManager layoutManager1,layoutManager2;
     CountDownTimer countDownTimer;
 
     int y=0;
@@ -62,15 +62,17 @@ public class CenteredTextFragment extends Fragment {
         recyclerView=(RecyclerView)view.findViewById(R.id.recyclerview);
         progressBar=(ProgressBar)view.findViewById(R.id.progressBar_subject);
         progressBar.setVisibility(View.VISIBLE);
-        layoutManager = new GridLayoutManager(getActivity(), 3);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, true));
+        layoutManager1 = new GridLayoutManager(getActivity(), 3);
+        recyclerView.setLayoutManager(layoutManager1);
+        //recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, true));
         recyclerView.setHasFixedSize(true);
         recyclerView2=(RecyclerView)view.findViewById(R.id.recyclerview2);
-        layoutManager = new GridLayoutManager(getActivity(), 1);
+        layoutManager2 = new GridLayoutManager(getActivity(), 3);
         recyclerView2.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, true));
         recyclerView2.setHasFixedSize(true);
-        fetchInfo();
         fetchInfo_annonce();
+        fetchInfo();
+
         try {
 
 
@@ -129,7 +131,7 @@ public class CenteredTextFragment extends Fragment {
                 contactList_annonce = response.body();
                 if(!contactList_annonce.isEmpty()|| contactList_annonce.equals(null)){
                     progressBar.setVisibility(View.GONE);
-                    x=contactList.size();
+                    x=contactList_annonce.size();
                     recyclerAdapter_annonce=new RecyclerAdapter_first_annonce(getActivity(),contactList_annonce,recyclerView2);
                     recyclerView2.setAdapter(recyclerAdapter_annonce);}
                 progressBar.setVisibility(View.GONE);
@@ -141,5 +143,11 @@ public class CenteredTextFragment extends Fragment {
             }
         });
     }
-
+    public static CenteredTextFragment createFor(String text) {
+        CenteredTextFragment fragment = new CenteredTextFragment();
+        Bundle args = new Bundle();
+        args.putString(EXTRA_TEXT, text);
+        fragment.setArguments(args);
+        return fragment;
+    }
 }

@@ -57,7 +57,7 @@ public class List_activity extends AppCompatActivity {
         progressBar=(ProgressBar)findViewById(R.id.progressBar_subject);
         progressBar.setVisibility(View.VISIBLE);
         this.setTitle("");
-        toolbar.setNavigationIcon(R.drawable.ic_keyboard_arrow_left_black_24dp);
+        toolbar.setNavigationIcon(R.drawable.ic_chevron_right_black_24dp);
         setSupportActionBar(toolbar);
         toolbar.setNavigationOnClickListener(
                 new View.OnClickListener() {
@@ -68,7 +68,7 @@ public class List_activity extends AppCompatActivity {
                 }
         );
 
-        layoutManager = new GridLayoutManager(this, 2);
+        layoutManager = new GridLayoutManager(this, 1);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
 
@@ -85,8 +85,7 @@ public class List_activity extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
                 if (contactList.isEmpty() || contactList.equals(null)) {
 
-                } else {    // realm.beginTransaction();
-
+                } else {
 
                     recyclerAdapter=new RecyclerAdapter(List_activity.this,contactList);
                     recyclerView.setAdapter(recyclerAdapter);

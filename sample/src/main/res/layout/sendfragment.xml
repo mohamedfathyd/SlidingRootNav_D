@@ -24,50 +24,58 @@
         <RelativeLayout
             android:id="@+id/d"
             android:layout_width="wrap_content"
-            android:padding="30dp"
-            android:layout_margin="20dp"
+            android:padding="10dp"
+            android:layout_margin="10dp"
             android:layout_centerInParent="true"
-            android:background="@drawable/rounded_edittext"
+
             android:layout_height="wrap_content">
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/a"
-
+                android:padding="5dp"
+                android:background="@drawable/rounded_edittext"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp">
                 <EditText android:id="@+id/input_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
                     android:inputType="textEmailAddress"
-                    android:hint="User Id" />
+                    android:hint="رقم المستخدم" />
             </android.support.design.widget.TextInputLayout>
 
             <!--  Password Label -->
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
+                android:padding="5dp"
+                android:background="@drawable/rounded_edittext"
                 android:layout_marginTop="8dp"
                 android:layout_below="@+id/a"
                 android:layout_marginBottom="8dp">
                 <EditText android:id="@+id/input_password"
                     android:layout_width="match_parent"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:inputType="textPassword"
-                    android:hint="Number Of Points"/>
+                    android:hint="النقاظ"/>
             </android.support.design.widget.TextInputLayout>
         </RelativeLayout>
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_login"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="60dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginRight="90dp"
+            android:layout_marginLeft="90dp"
+            android:background="@drawable/rounded_edittext_blue"
             android:layout_below="@+id/d"
-            android:background="@color/startblue"
-            android:text="Send"/>
+
+            android:text="ارسال"/>
 
     </RelativeLayout>
 </FrameLayout>

@@ -41,7 +41,7 @@ public class RecyclerAdapter_first_annonce extends RecyclerView.Adapter<Recycler
 try {
 
 
-    myTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/flat.ttf");
+    //myTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/flat.ttf");
     Glide.with(context).load(contactslist.get(position).getImage()).error(R.drawable.circlelogo).into(holder.image);
 }
 catch (Exception e){}

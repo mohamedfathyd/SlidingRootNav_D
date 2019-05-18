@@ -24,7 +24,7 @@ public interface apiinterface_home {
     @GET("Gmalek_annonce.php")
     Call<List<contact_annonce>> getcontacts_annonce();
     @FormUrlEncoded
-    @POST("Gmalek_secnd_category.php")
+    @POST("Gmalek_second_category.php")
     Call<List<contact_order>> getcontacts_second(@Field("id") int id);
 }
 
