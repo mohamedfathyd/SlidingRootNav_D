@@ -267,7 +267,7 @@ public class Regestration_activity extends AppCompatActivity {
         textInputEditTextaddress =  findViewById(R.id.input_address);
         textInputEditTextmail= findViewById(R.id.input_email);
         textInputEditTextpassword =  findViewById(R.id.input_password);
-        textInputEditTextage =  findViewById(R.id.intent_data);
+        textInputEditTextage =  findViewById(R.id.input_date);
         textInputEditTextconfirmpassword =  findViewById(R.id.input_reEnterPassword);
         regesiter = (AppCompatButton) findViewById(R.id.btn_signup);
         profile=findViewById(R.id.image);

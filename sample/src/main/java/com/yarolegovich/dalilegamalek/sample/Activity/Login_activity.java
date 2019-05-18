@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,7 +31,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Login_activity extends AppCompatActivity {
-
+Button takhaty;
     AppCompatTextView Naccount;
     AppCompatButton login;
     TextView newaccount;
@@ -48,6 +49,13 @@ public class Login_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_activity);
+        takhaty=findViewById(R.id.takhaty);
+        takhaty.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Login_activity.this,SampleActivity.class));
+            }
+        });
         Calligrapher calligrapher = new Calligrapher(this);
         calligrapher.setFont(this, "Droid.ttf", true);
 
