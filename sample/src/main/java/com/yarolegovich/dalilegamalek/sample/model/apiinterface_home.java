@@ -10,21 +10,21 @@ import retrofit2.http.POST;
 
 public interface apiinterface_home {
 
-   @FormUrlEncoded
+    @FormUrlEncoded
     @POST("Gmalek_user.php")
     Call<ResponseBody> getcontacts(@Field("name") String name,@Field("password") String password, @Field("address") String address, @Field("phone") String phone,
                                    @Field("date") String date, @Field("email") String email, @Field("image") String image
-                                   );
- @FormUrlEncoded
- @POST("Gmalek_login.php")
- Call<List<contact_home>>getcontacts_login( @Field("phonee") String phonee,@Field("password")String password);
+    );
+    @FormUrlEncoded
+    @POST("Gmalek_login.php")
+    Call<List<contact_home>>getcontacts_login( @Field("phonee") String phonee,@Field("password")String password);
 
     @GET("Gmalek_first_category.php")
     Call<List<content_category>> getcontacts_allfirst();
- @GET("Gmalek_annonce.php")
- Call<List<content_category>> getcontacts_annonce();
+    @GET("Gmalek_annonce.php")
+    Call<List<contact_annonce>> getcontacts_annonce();
     @FormUrlEncoded
-    @POST("Gmalek_first_category.php")
-    Call<ResponseBody> getcontacts_second(@Field("id") int id);
+    @POST("Gmalek_secnd_category.php")
+    Call<List<contact_order>> getcontacts_second(@Field("id") int id);
 }
 

@@ -1,6 +1,8 @@
 package com.yarolegovich.dalilegamalek.sample.fragment;
 
 import android.app.Fragment;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -26,14 +28,10 @@ import me.anwarshahriar.calligrapher.Calligrapher;
 public class ScannFragmet extends Fragment {
 
     private static final String EXTRA_TEXT = "text";
-ImageView imageView;
-    public static ScannFragmet createFor(String text) {
-        ScannFragmet fragment = new ScannFragmet();
-        Bundle args = new Bundle();
-        args.putString(EXTRA_TEXT, text);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    ImageView imageView;
+    private SharedPreferences sharedpref;
+
+    int id;
 
     @Nullable
     @Override
@@ -43,8 +41,9 @@ ImageView imageView;
         Calligrapher calligrapher = new Calligrapher(getActivity());
         calligrapher.setFont(getActivity(), "Droid.ttf", true);
         imageView=view.findViewById(R.id.parcode);
-
-        String text = "34";
+        sharedpref= getActivity().getSharedPreferences("ManoAd", Context.MODE_PRIVATE);
+        id=sharedpref.getInt("id",0);
+        String text = String.valueOf(id);
         MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
         try {
             BitMatrix bitMatrix = multiFormatWriter.encode(text, BarcodeFormat.QR_CODE,900,200);

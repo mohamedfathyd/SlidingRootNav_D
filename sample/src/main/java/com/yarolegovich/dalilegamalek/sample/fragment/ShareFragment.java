@@ -22,14 +22,8 @@ import me.anwarshahriar.calligrapher.Calligrapher;
 public class ShareFragment extends Fragment {
 
     private static final String EXTRA_TEXT = "text";
-AppCompatButton a;
-    public static ShareFragment createFor(String text) {
-        ShareFragment fragment = new ShareFragment();
-        Bundle args = new Bundle();
-        args.putString(EXTRA_TEXT, text);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    AppCompatButton a;
+
 
     @Nullable
     @Override

@@ -57,7 +57,6 @@
                         android:layout_marginBottom="5dp"
                         android:text="fish name"
                         android:textSize="15dp"
-
                         android:layout_marginRight="10dp"
                         android:textStyle="bold"
                       />
@@ -74,20 +73,9 @@
                             android:textSize="15dp"
                             android:layout_marginRight="10dp"
                             />
-
                     </LinearLayout>
-
-
-
-
-
                 </LinearLayout>
-
             </RelativeLayout>
-
-
         </LinearLayout>
-
-
     </android.support.v7.widget.CardView>
 </RelativeLayout>

@@ -7,16 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".Activity.Login_activity">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="تخطى"
-        android:id="@+id/takhaty"
-        android:background="@drawable/rounded_edittext_blue"
-        android:layout_alignParentRight="true"
-        android:layout_margin="20dp"
 
-        />
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -79,29 +70,42 @@
                 android:hint="كلمة المرور"/>
         </android.support.design.widget.TextInputLayout>
         </RelativeLayout>
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_login"
+        <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="54dp"
-            android:layout_marginLeft="54dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            >
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/link_signup"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/rounded_edittext_blue"
+                android:text="حساب جديد"/>
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_login"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/rounded_edittext_blue"
+                android:text="تسجيل الدخول"/>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="تخطى"
+            android:id="@+id/takhaty"
             android:background="@drawable/rounded_edittext_blue"
-            android:text="Login"/>
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
 
-        <TextView android:id="@+id/link_signup"
-            android:layout_width="fill_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="24dp"
-            android:text="لأنشاء حساب جديد ؟ أضغط هنا"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textColor="@color/colorAccent"
-            android:background="@drawable/rounded_edittext_t"
-            android:textSize="16dip"/>
-
+            />
     </LinearLayout>
 
 </RelativeLayout>

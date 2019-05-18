@@ -7,7 +7,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:background="@color/graylight"
     android:orientation="vertical">
     <RelativeLayout
@@ -67,7 +66,6 @@
                         android:textSize="20sp"
                         android:paddingTop="10dp"
                         android:textColor="@color/startblue"/>
-
                 </LinearLayout>
                 <LinearLayout
                     android:gravity="center"
@@ -125,7 +123,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
-        android:layout_marginTop="45dp">
+        android:layout_marginTop="5dp">
         <LinearLayout
             android:orientation="horizontal"
             android:paddingLeft="25dp"
@@ -135,14 +133,16 @@
             <TextView
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"
-                android:layout_width="wrap_content"
                 android:id="@+id/email"
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:background="@drawable/rounded_edittext"
                 android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
+                android:padding="10dp"
                 android:text="manisaiprasadam@gmail.com"/>
         </LinearLayout>
         <LinearLayout
-            android:layout_marginTop="25dp"
+
             android:orientation="horizontal"
             android:paddingLeft="25dp"
             android:layout_width="match_parent"
@@ -152,13 +152,16 @@
                 android:textStyle="bold"
                 android:id="@+id/phone"
                 android:layout_gravity="center_vertical"
-                android:layout_width="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:background="@drawable/rounded_edittext"
                 android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
+                android:padding="10dp"
+
                 android:text="+91 8179879100"/>
         </LinearLayout>
         <LinearLayout
-            android:layout_marginTop="25dp"
+
             android:orientation="horizontal"
             android:paddingLeft="25dp"
             android:layout_width="match_parent"
@@ -168,9 +171,12 @@
                 android:textStyle="bold"
                 android:id="@+id/address"
                 android:layout_gravity="center_vertical"
-                android:layout_width="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:background="@drawable/rounded_edittext"
                 android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
+                android:padding="10dp"
+
                 android:text="Add Address"/>
         </LinearLayout>
         <LinearLayout

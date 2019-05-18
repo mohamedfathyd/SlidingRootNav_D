@@ -32,7 +32,7 @@ import retrofit2.Response;
 
 public class Login_activity extends AppCompatActivity {
 Button takhaty;
-    AppCompatTextView Naccount;
+    AppCompatButton Naccount;
     AppCompatButton login;
     TextView newaccount;
     EditText textInputEditTextphone,textInputEditTextpassword;
@@ -109,7 +109,7 @@ Button takhaty;
                 if(response.isSuccessful()){
 
                     contactList = response.body();
-                    try {
+
                         progressDialog.dismiss();
                         edt.putInt("id",contactList.get(0).getId());
                         edt.putString("name",contactList.get(0).getName());
@@ -127,13 +127,11 @@ Button takhaty;
                         dlgAlert.setPositiveButton("OK", null);
                         dlgAlert.setCancelable(true);
                         dlgAlert.create().show();
-                        startActivity(new Intent(Login_activity.this,SampleActivity.class));}
-                    catch (Exception e){
-                        Toast.makeText(Login_activity.this,"هناك خطأ فى الهاتف او الرقم السري /",Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(Login_activity.this,SampleActivity.class));
 
                         progressDialog.dismiss();
                     }
-                }
+
             }
 
             @Override
