@@ -99,9 +99,9 @@ Button takhaty;
     public void fetchInfo(){
         progressDialog = ProgressDialog.show(Login_activity.this,"جاري تسجيل الدخول","Please wait...",false,false);
         progressDialog.show();
-        String phone="+2"+textInputEditTextphone.getText().toString();
+
         apiinterface= Apiclient_home.getapiClient().create(apiinterface_home.class);
-        Call<List<contact_home>> call= apiinterface.getcontacts_login(phone,
+        Call<List<contact_home>> call= apiinterface.getcontacts_login(textInputEditTextphone.getText().toString(),
                 textInputEditTextpassword.getText().toString());
         call.enqueue(new Callback<List<contact_home>>() {
             @Override
@@ -137,7 +137,7 @@ Button takhaty;
 
             @Override
             public void onFailure(Call<List<contact_home>> call, Throwable t) {
-                Toast.makeText(Login_activity.this,"هناك خطأ فى الهاتف او الرقم السري",Toast.LENGTH_LONG).show();
+                Toast.makeText(Login_activity.this,"هناك خطأ فى الهاتف او الرقم السري  ... لا تنسي كود دولتك قبل رقم الهاتف ",Toast.LENGTH_LONG).show();
 
                 progressDialog.dismiss();
             }

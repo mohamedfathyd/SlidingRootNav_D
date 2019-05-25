@@ -114,7 +114,7 @@ public class Regestration_activity extends AppCompatActivity {
                 } else if (!textInputEditTextconfirmpassword.getText().toString().equals(textInputEditTextpassword.getText().toString())) {
                     textInputLayoutconfirmpassword.setError("كلمة تأكيد مختلفة");
                 } else {
-                    String phone="+2"+textInputEditTextphone.getText().toString();
+                    String phone=textInputEditTextphone.getText().toString();
                     //  Toast.makeText(Registration.this,"a",Toast.LENGTH_LONG).show();
                     PhoneAuthProvider.getInstance().verifyPhoneNumber(
                             phone,        // Phone number to verify
@@ -227,15 +227,11 @@ public class Regestration_activity extends AppCompatActivity {
         progressDialog = ProgressDialog.show(Regestration_activity.this, "جاري انشاء الحساب", "Please wait...", false, false);
         progressDialog.show();
         String image = convertToString();
-        String phone="+2"+textInputEditTextphone.getText().toString();
-        int x= Integer.parseInt(textInputEditTextr.getText().toString());
-        if(textInputEditTextr.getText().toString().equals("")){
-            x=0;
-        }
+
         apiinterface = Apiclient_home.getapiClient().create(apiinterface_home.class);
         Call<ResponseBody> call = apiinterface.getcontacts(textInputEditTextname.getText().toString(),
                 textInputEditTextpassword.getText().toString(), textInputEditTextaddress.getText().toString()
-                ,phone,textInputEditTextage.getText().toString(),textInputEditTextmail.getText().toString(),
+                ,textInputEditTextphone.getText().toString(),textInputEditTextage.getText().toString(),textInputEditTextmail.getText().toString(),
                image);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
@@ -249,8 +245,8 @@ public class Regestration_activity extends AppCompatActivity {
                 dlgAlert.setCancelable(true);
                 dlgAlert.create().show();
               login_  login_=new login_();
-                String phone="+2"+textInputEditTextphone.getText().toString();
-                login_.fetchInfo(Regestration_activity.this,phone,textInputEditTextpassword.getText().toString());
+
+                login_.fetchInfo(Regestration_activity.this,textInputEditTextphone.getText().toString(),textInputEditTextpassword.getText().toString());
                 finish();
             }
 
