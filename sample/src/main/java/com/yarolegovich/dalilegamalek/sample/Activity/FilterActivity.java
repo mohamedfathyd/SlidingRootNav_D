@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.yarolegovich.dalilegamalek.sample.R;
 
@@ -60,6 +61,7 @@ Spinner spn,spncontry;
             public void onClick(View view) {
                 if(fromm.getText().toString()==null||fromm.getText().toString().equals("")||too.getText().toString()==null||too.getText().toString().equals("")){
                     String city=spn.getSelectedItem().toString();
+                    Toast.makeText(FilterActivity.this, "dasdad", Toast.LENGTH_SHORT).show();
                     int from= 0;
                     int to= 100000;
                     Intent intent=new Intent(FilterActivity.this,Filtter_data.class);
