@@ -71,6 +71,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="fish name"
+                            android:textColor="@color/startblue"
                             android:textSize="15dp"
                             android:layout_marginRight="10dp"
                             />

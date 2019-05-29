@@ -230,6 +230,15 @@
                 android:layout_marginLeft="4dp"
                 android:text="time available"/>
         </LinearLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:background="@drawable/like"
+            android:id="@+id/like"
+            />
     </LinearLayout>
 
 

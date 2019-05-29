@@ -57,7 +57,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
                 int id=contactslist.get(position).getId();
                     String name=contactslist.get(position).getName();
                     int point=contactslist.get(position).getPoints();
-                    String price=contactslist.get(position).getPrice();
+                    Double price=contactslist.get(position).getPrice();
                     String image=contactslist.get(position).getImage();
                     Intent intent=new Intent(context, show.class);
                     intent.putExtra("name",name);

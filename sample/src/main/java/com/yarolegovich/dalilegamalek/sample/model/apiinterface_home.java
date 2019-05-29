@@ -34,5 +34,9 @@ public interface apiinterface_home {
     @POST("Gmalek_sendpoint.php")
     Call<ResponseBody> getcontacts_send(@Field("id_send") int id_send,@Field("id_receive") int id_receive , @Field("points")int points);
 
+    @FormUrlEncoded
+    @POST("Gmalek_Like.php")
+    Call<ResponseBody> getcontacts_like(@Field("user_id") int user_id,@Field("annonce_id") int annonce_id );
+
 }
 

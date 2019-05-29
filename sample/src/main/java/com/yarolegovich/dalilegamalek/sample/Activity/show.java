@@ -17,10 +17,13 @@ import me.anwarshahriar.calligrapher.Calligrapher;
 
 public class show extends AppCompatActivity {
     Intent intent;
-    String name,image,address,city,country,price,details,phone,category;
+    String name,image,address,city,country,details,phone,category;
+    Double price;
     int id,point,likes;
-    ImageView img;
+    Like likeclass;
+    ImageView img,likee;
     TextView namee,offer,pricee,like,addresss,phonee,detailss,countryy,cityy;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +51,7 @@ public class show extends AppCompatActivity {
         city=intent.getStringExtra("city");
 
         country=intent.getStringExtra("country");
-        price=intent.getStringExtra("price");
+        price=intent.getDoubleExtra("price",0);
         details=intent.getStringExtra("details");
         phone=intent.getStringExtra("phone");
         category=intent.getStringExtra("category");
@@ -58,13 +61,20 @@ public class show extends AppCompatActivity {
         namee.setText(name);
         addresss.setText(address);
         phonee.setText(phone);
-        pricee.setText(price);
+        pricee.setText(price+"");
         offer.setText(point+"");
         Glide.with(this).load(image).error(R.drawable.circlelogo).into(img);
         detailss.setText(details);
         like.setText(likes+"");
        countryy.setText("البلد :"+ country);
       cityy.setText("المدينة :"+city);
+      likee.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              likeclass=new Like();
+              likeclass.fetchInfo(show.this,id);
+          }
+      });
     }
     public void Initialize(){
         img=findViewById(R.id.img);
@@ -73,6 +83,7 @@ public class show extends AppCompatActivity {
         pricee=findViewById(R.id.price);
         offer=findViewById(R.id.offer);
         like=findViewById(R.id.likes);
+        likee=findViewById(R.id.like);
         detailss=findViewById(R.id.details);
         addresss=findViewById(R.id.address);
         countryy=findViewById(R.id.country);
