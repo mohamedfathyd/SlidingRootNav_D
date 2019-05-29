@@ -9,17 +9,36 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
         android:hardwareAccelerated="false"
+        android:icon="@drawable/circlelogo"
+        android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.Filtter_data"></activity>
-        <activity android:name=".Activity.FilterActivity" />
-        <activity android:name=".Activity.Profile_page" />
-        <activity android:name=".Activity.show" />
-        <activity android:name=".Activity.List_activity" />
+        <activity android:name=".Activity.SplashActivity"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.Filtter_data"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Activity.FilterActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Activity.Profile_page"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Activity.show"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Activity.List_activity"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".Activity.Regestration_activity"
             android:screenOrientation="portrait"
@@ -28,11 +47,7 @@
             android:name=".Activity.Login_activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".SampleActivity"
