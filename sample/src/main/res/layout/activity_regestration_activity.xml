@@ -110,7 +110,7 @@
                 android:gravity="center"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
-                android:inputType="number"
+
                 android:hint="رقم الهاتف" />
         </android.support.design.widget.TextInputLayout>
 

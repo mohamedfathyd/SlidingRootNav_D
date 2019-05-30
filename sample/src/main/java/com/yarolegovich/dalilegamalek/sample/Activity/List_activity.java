@@ -91,16 +91,20 @@ public class List_activity extends AppCompatActivity {
         call.enqueue(new Callback<List<contact_order>>() {
             @Override
             public void onResponse(Call<List<contact_order>> call, Response<List<contact_order>> response) {
-                contactList = response.body();
-                progressBar.setVisibility(View.GONE);
-                if (contactList.isEmpty() || contactList.equals(null)) {
+                try {
+                    contactList = response.body();
+                    progressBar.setVisibility(View.GONE);
+                    if (contactList.isEmpty() || contactList.equals(null)) {
 
-                } else {
+                    } else {
 
-                    recyclerAdapter=new RecyclerAdapter(List_activity.this,contactList);
-                    recyclerView.setAdapter(recyclerAdapter);
+                        recyclerAdapter = new RecyclerAdapter(List_activity.this, contactList);
+                        recyclerView.setAdapter(recyclerAdapter);
+                    }
                 }
+                catch (Exception e){
 
+                }
             }
 
             @Override

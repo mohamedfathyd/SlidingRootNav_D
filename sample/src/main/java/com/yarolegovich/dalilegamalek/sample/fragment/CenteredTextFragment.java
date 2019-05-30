@@ -106,13 +106,15 @@ public class CenteredTextFragment extends Fragment {
         call.enqueue(new Callback<List<content_category>>() {
             @Override
             public void onResponse(Call<List<content_category>> call, Response<List<content_category>> response) {
-                contactList = response.body();
-                progressBar.setVisibility(View.GONE);
-                if(!contactList.isEmpty()|| contactList.equals(null)){
-                    recyclerAdapter=new RecyclerAdapter_first(getActivity(),contactList);
-                    recyclerView.setAdapter(recyclerAdapter);
+                try {
+                    contactList = response.body();
+                    progressBar.setVisibility(View.GONE);
+                    if (!contactList.isEmpty() || contactList.equals(null)) {
+                        recyclerAdapter = new RecyclerAdapter_first(getActivity(), contactList);
+                        recyclerView.setAdapter(recyclerAdapter);
+                    }
                 }
-
+                catch (Exception e){}
 
             }
 
@@ -128,13 +130,17 @@ public class CenteredTextFragment extends Fragment {
         call.enqueue(new Callback<List<contact_annonce>>() {
             @Override
             public void onResponse(Call<List<contact_annonce>> call, Response<List<contact_annonce>> response) {
+                try{
                 contactList_annonce = response.body();
                 if(!contactList_annonce.isEmpty()|| contactList_annonce.equals(null)){
                     progressBar.setVisibility(View.GONE);
                     x=contactList_annonce.size();
                     recyclerAdapter_annonce=new RecyclerAdapter_first_annonce(getActivity(),contactList_annonce,recyclerView2);
                     recyclerView2.setAdapter(recyclerAdapter_annonce);}
-                progressBar.setVisibility(View.GONE);
+                progressBar.setVisibility(View.GONE);}
+                catch (Exception e){
+
+                }
             }
 
             @Override

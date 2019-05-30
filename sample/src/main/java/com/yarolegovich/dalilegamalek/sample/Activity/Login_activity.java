@@ -106,6 +106,7 @@ Button takhaty;
         call.enqueue(new Callback<List<contact_home>>() {
             @Override
             public void onResponse(Call<List<contact_home>> call, Response<List<contact_home>> response) {
+                try{
                 if(response.isSuccessful()){
 
                     contactList = response.body();
@@ -131,6 +132,10 @@ Button takhaty;
                         startActivity(new Intent(Login_activity.this,SampleActivity.class));
 
                         progressDialog.dismiss();
+                    }}
+                    catch (Exception e){
+                        Toast.makeText(Login_activity.this,"هناك خطأ فى الهاتف او الرقم السري  ... لا تنسي كود دولتك قبل رقم الهاتف ",Toast.LENGTH_LONG).show();
+
                     }
 
             }
