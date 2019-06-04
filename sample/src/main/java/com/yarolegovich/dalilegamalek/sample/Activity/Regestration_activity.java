@@ -17,6 +17,8 @@ import android.support.v7.widget.AppCompatTextView;
 import android.text.InputType;
 import android.util.Base64;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -58,10 +60,13 @@ public class Regestration_activity extends AppCompatActivity {
     String code,mVerificationId;
     ProgressDialog progressDialog;
     ImageView profile;
+    CheckBox checkbox;
+    Boolean check=false;
     ProgressDialog progressDialog1;
     //   login_ login_;
     String codee =null;
   private FirebaseAuth mAuth;
+  TextView alarm;
 
     Bitmap bitmap;
     private  static final int IMAGE = 100;
@@ -74,7 +79,28 @@ public class Regestration_activity extends AppCompatActivity {
 
 
   inisialize();
+checkbox=findViewById(R.id.checkbox);
+        checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
+            {
+                if ( isChecked )
+                {
+                    // perform logic
+                    check=true;
+                }
 
+            }
+        });
+alarm=findViewById(R.id.alarm);
+alarm.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        login_ login_=new login_();
+        login_.dialgsupport(Regestration_activity.this);
+    }
+});
         openlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,7 +119,7 @@ public class Regestration_activity extends AppCompatActivity {
                 regesiter.setClickable(false);
                 if (textInputEditTextaddress.getText().toString().equals("") || textInputEditTextaddress.getText().toString() == null) {
 
-                    textInputLayoutaddress.setError("أدخل البريد الألكترونى");
+                    textInputLayoutaddress.setError("أدخل العنوان");
 
                 } else if (textInputEditTextname.getText().toString().equals("") || textInputEditTextname.getText().toString() == null) {
 
@@ -113,7 +139,11 @@ public class Regestration_activity extends AppCompatActivity {
 
                 } else if (!textInputEditTextconfirmpassword.getText().toString().equals(textInputEditTextpassword.getText().toString())) {
                     textInputLayoutconfirmpassword.setError("كلمة تأكيد مختلفة");
-                } else {
+                }
+
+                else {
+                    if(check==false){}
+                    else{
                     String phone=textInputEditTextphone.getText().toString();
                     //  Toast.makeText(Registration.this,"a",Toast.LENGTH_LONG).show();
                     PhoneAuthProvider.getInstance().verifyPhoneNumber(
@@ -127,7 +157,7 @@ public class Regestration_activity extends AppCompatActivity {
                     progressDialog1.show();
 
                     // fetchInfo();
-                }
+                }}
             }
         });
         mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
@@ -258,6 +288,11 @@ public class Regestration_activity extends AppCompatActivity {
     }
 
     public void inisialize() {
+        textInputLayoutname = (TextInputLayout) findViewById(R.id.name);
+        textInputLayoutaddress = (TextInputLayout) findViewById(R.id.address);
+        textInputLayoutphone = (TextInputLayout) findViewById(R.id.phone);
+        textInputLayoutpassword = (TextInputLayout) findViewById(R.id.password);
+        textInputLayoutconfirmpassword = (TextInputLayout) findViewById(R.id.confirmpassword);
 
         textInputEditTextname =  findViewById(R.id.input_name);
         textInputEditTextphone =  findViewById(R.id.input_mobile);

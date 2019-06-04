@@ -44,7 +44,7 @@ Button takhaty;
     ProgressDialog progressDialog;
     String codee;
 
-    //  login__ login__;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
