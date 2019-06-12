@@ -184,6 +184,7 @@
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
             android:padding="12dp"
+            android:textColor="@color/white"
             android:background="@drawable/rounded_edittext_blue"
             android:text="أنشاء حساب"/>
 

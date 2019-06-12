@@ -19,6 +19,7 @@
             android:background="@drawable/rounded_edittext_blue"
             android:gravity="center"
             android:id="@+id/ss"
+            android:textColor="@color/white"
             android:padding="10dp"
             android:text="أفحص هذا الرمز"
             android:textSize="22dp"

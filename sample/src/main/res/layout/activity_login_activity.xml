@@ -83,6 +83,7 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="4dp"
+                android:textColor="@color/white"
                 android:layout_marginLeft="4dp"
                 android:background="@drawable/rounded_edittext_blue"
                 android:text="حساب جديد"/>
@@ -91,7 +92,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-
+                android:textColor="@color/white"
                 android:background="@drawable/rounded_edittext_blue"
                 android:text="تسجيل الدخول"/>
         </LinearLayout>
@@ -100,6 +101,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="تخطى"
+            android:textColor="@color/white"
             android:id="@+id/takhaty"
             android:background="@drawable/rounded_edittext_blue"
             android:layout_gravity="center"
