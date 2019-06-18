@@ -33,6 +33,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.hbb20.CountryCodePicker;
 import com.yarolegovich.dalilegamalek.sample.R;
 import com.yarolegovich.dalilegamalek.sample.model.Apiclient_home;
 import com.yarolegovich.dalilegamalek.sample.model.apiinterface_home;
@@ -53,6 +54,8 @@ public class Regestration_activity extends AppCompatActivity {
     EditText textInputEditTextname,textInputEditTextaddress,textInputEditTextphone,textInputEditTextcountry,textInputEditTextage,
             textInputEditTextpassword,textInputEditTextconfirmpassword,textInputEditTextr,textInputEditTextmail;
     AppCompatButton regesiter;
+    CountryCodePicker ccp;
+
     TextView openlogin;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
    Call<ResponseBody> call = null;
@@ -79,6 +82,15 @@ public class Regestration_activity extends AppCompatActivity {
 
 
   inisialize();
+        ccp=findViewById(R.id.ccp);
+        codee=ccp.getSelectedCountryCode();
+        ccp.setOnCountryChangeListener(new CountryCodePicker.OnCountryChangeListener() {
+            @Override
+            public void onCountrySelected() {
+                codee=ccp.getSelectedCountryCode();
+            }
+        });
+
 checkbox=findViewById(R.id.checkbox);
         checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
@@ -257,11 +269,11 @@ alarm.setOnClickListener(new View.OnClickListener() {
         progressDialog = ProgressDialog.show(Regestration_activity.this, "جاري انشاء الحساب", "Please wait...", false, false);
         progressDialog.show();
         String image = convertToString();
-
+String phone=codee+textInputEditTextphone.getText().toString();
         apiinterface = Apiclient_home.getapiClient().create(apiinterface_home.class);
         Call<ResponseBody> call = apiinterface.getcontacts(textInputEditTextname.getText().toString(),
                 textInputEditTextpassword.getText().toString(), textInputEditTextaddress.getText().toString()
-                ,textInputEditTextphone.getText().toString(),textInputEditTextage.getText().toString(),textInputEditTextmail.getText().toString(),
+                ,phone,textInputEditTextage.getText().toString(),textInputEditTextmail.getText().toString(),
                image);
         call.enqueue(new Callback<ResponseBody>() {
             @Override

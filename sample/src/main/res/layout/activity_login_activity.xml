@@ -32,10 +32,27 @@
             android:layout_marginTop="90dp"
 
             android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/a"
+                android:weightSum="4"
+                android:orientation="horizontal"
+                >
+                <com.hbb20.CountryCodePicker
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".9"
+                    app:ccp_hintExampleNumber="true"
+                    app:ccp_countryPreference="EG"
+                    app:ccp_defaultNameCode="EG"
+                    app:ccp_showPhoneCode="false"
+                    android:id="@+id/ccp"
+                    app:ccp_hintExampleNumberType="FIXED_LINE"/>
         <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/a"
+           android:layout_weight="3.1"
             android:background="@drawable/rounded_edittext"
             android:padding="5dp"
             android:layout_marginTop="8dp"
@@ -49,6 +66,7 @@
                 android:layout_marginLeft="20dp"
                 android:hint="رقم الهاتف" />
         </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
 
         <!--  Password Label -->
         <android.support.design.widget.TextInputLayout
